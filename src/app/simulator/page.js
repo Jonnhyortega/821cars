@@ -4,21 +4,20 @@ import { useState } from "react";
 
 
 function simuladorEnPesos(carPriceARS, anticipo = 0) {
-  const margenExtra = 10_000_000;
-  const priceBase = carPriceARS + margenExtra - anticipo;
+  const capitalAFinanciar = carPriceARS - anticipo;
 
   const cuotasDisponibles = [60, 48, 36, 24, 12];
-  const descuentos = {
-    60: 0,
-    48: 300_000,
-    36: 600_000,
-    24: 900_000,
-    12: 1_200_000,
+  const intereses = {
+    60: 7_000_000,
+    48: 6_500_000,
+    36: 6_000_000,
+    24: 5_500_000,
+    12: 5_000_000,
   };
 
   return cuotasDisponibles.map((num) => {
-    const precioAjustado = priceBase - descuentos[num];
-    const valorCuota = (precioAjustado / num).toLocaleString("es-AR", {
+    const totalConInteres = capitalAFinanciar + intereses[num];
+    const valorCuota = (totalConInteres / num).toLocaleString("es-AR", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
@@ -59,6 +58,20 @@ export default function SimulatorPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [copiado, setCopiado] = useState(false);
+
+  const handleCurrencyChange = (setter) => (e) => {
+    const rawValue = e.target.value.replace(/\D/g, "");
+    setter(rawValue);
+  };
+
+  const formatCurrencyInput = (value) => {
+    if (!value) return "";
+    return new Intl.NumberFormat("es-AR", {
+      style: "currency",
+      currency: "ARS",
+      maximumFractionDigits: 0,
+    }).format(Number(value));
+  };
 
   const handleSimular = async () => {
     try {
@@ -105,21 +118,21 @@ export default function SimulatorPage() {
           <div>
             <label className="block text-sm mb-2 text-gray-400">Precio del vehículo (ARS)</label>
             <input
-              type="number"
+              type="text"
               className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
-              value={precioARS}
-              onChange={(e) => setPrecioARS(e.target.value)}
-              placeholder="Ej: 15000000"
+              value={formatCurrencyInput(precioARS)}
+              onChange={handleCurrencyChange(setPrecioARS)}
+              placeholder="Ej: $ 15.000.000"
             />
           </div>
           <div>
             <label className="block text-sm mb-2 text-gray-400">Anticipo (ARS)</label>
             <input
-              type="number"
+              type="text"
               className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
-              value={anticipo}
-              onChange={(e) => setAnticipo(e.target.value)}
-              placeholder="Ej: 4000000"
+              value={formatCurrencyInput(anticipo)}
+              onChange={handleCurrencyChange(setAnticipo)}
+              placeholder="Ej: $ 4.000.000"
             />
           </div>
         </div>
