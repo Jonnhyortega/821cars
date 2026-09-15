@@ -1,8 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import Logo821Cars from "./Logo821Cars";
 
 export default function SplashScreen({ onFinish }) {
   const [isVisible, setIsVisible] = useState(true);
@@ -11,7 +11,7 @@ export default function SplashScreen({ onFinish }) {
     const timer = setTimeout(() => {
       setIsVisible(false);
       if (onFinish) onFinish();
-    }, 2500); // 2.5 seconds splash
+    }, 2200);
 
     return () => clearTimeout(timer);
   }, [onFinish]);
@@ -32,33 +32,16 @@ export default function SplashScreen({ onFinish }) {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center"
           >
-            <div className="relative w-40 h-40 md:w-56 md:h-56 overflow-hidden rounded-full shadow-[0_0_40px_rgba(255,255,255,0.2)] mb-8 border-2 border-white/10">
-              <Image
-                src="/logo.jpg"
-                alt="Alcars Logo"
-                fill
-                className="object-cover"
-                priority
-              />
+            <div className="mb-6">
+              <Logo821Cars size="xl" showSubtitle={true} />
             </div>
-            
-            <motion.h1 
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-3xl md:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400"
-            >
-              ALCARS
-            </motion.h1>
-            
-            <motion.p 
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               transition={{ delay: 1.0, duration: 0.6 }}
-               className="mt-2 text-neutral-400 text-sm md:text-base tracking-[0.2em] uppercase"
-            >
-              Experiencia Premium
-            </motion.p>
+
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ delay: 0.4, duration: 1.2 }}
+              className="h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent w-48 mt-4"
+            />
           </motion.div>
         </motion.div>
       )}

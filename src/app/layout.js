@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Garage de AlCars",
-  description: "Catalogo de vehiculos",
+  title: "821 Cars | Catálogo de Vehículos Seleccionados",
+  description: "Catálogo exclusivo de vehículos seleccionados en 821 Cars.",
   icons: {
     icon: "/logo.jpg",
     shortcut: "/logo.jpg",

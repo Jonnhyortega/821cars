@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import AutoCard from "./components/autoCard";
 import Navbar from "./components/navbar";
@@ -8,6 +9,7 @@ import { stock } from "@/data/stock";
 import { Search, MapPin, Phone, Clock, ShieldCheck, Banknote, ThumbsUp, Car, ChevronDown } from "lucide-react";
 import WhatsAppButton from "./components/whatsappButton";
 import { motion } from "framer-motion";
+import Logo821Cars from "@/components/Logo821Cars";
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -65,8 +67,8 @@ export default function Home() {
       <main className="flex flex-col">
         
         {/* 🔹 Hero Section */}
-        <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-24 overflow-hidden">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background"></div>
+        <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-28 pb-16 overflow-hidden">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/15 via-background to-background"></div>
           
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -74,19 +76,17 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-8 relative"
           >
-            <div className="absolute inset-0 bg-primary/30 blur-[100px] rounded-full"></div>
-            <img
-              src="https://res.cloudinary.com/do87isqjr/image/upload/v1760550481/logo-removebg-preview_m5ji7p.png"
-              alt="Alcars Logo"
-              className="relative z-10 w-48 md:w-64 drop-shadow-2xl bg-white rounded-full p-4"
-            />
+            <div className="absolute inset-0 bg-blue-500/20 blur-[90px] rounded-full"></div>
+            <div className="relative z-10 p-6 bg-card/60 backdrop-blur-xl border border-border/80 rounded-3xl shadow-2xl">
+              <Logo821Cars size="xl" showSubtitle={true} />
+            </div>
           </motion.div>
 
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-foreground via-foreground/80 to-muted-foreground bg-clip-text text-transparent max-w-4xl"
+            className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent max-w-4xl"
           >
             Tu próximo vehículo te está esperando
           </motion.h1>
@@ -97,25 +97,28 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10"
           >
-            En Alcars te ofrecemos la mejor selección de autos, con la confianza y el respaldo que necesitás para tomar la mejor decisión.
+            En <span className="font-semibold text-foreground">821 Cars</span> te ofrecemos la mejor selección de autos, con la confianza y el respaldo que necesitás para tomar la mejor decisión.
           </motion.p>
 
-          <motion.button
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            onClick={scrollToCatalog}
-            className="flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary/90 hover:scale-105 transition-all shadow-lg hover:shadow-primary/25"
           >
-            <Car className="w-6 h-6" />
-            Ver Catálogo
-          </motion.button>
+            <Link
+              href="/catalogo"
+              className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary/90 hover:scale-105 transition-all shadow-xl shadow-primary/20"
+            >
+              <Car className="w-6 h-6" />
+              Explorar Catálogo
+            </Link>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-            className="absolute bottom-10 text-muted-foreground"
+            className="absolute bottom-6 text-muted-foreground"
           >
             <ChevronDown className="w-8 h-8" />
           </motion.div>
@@ -132,7 +135,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="text-3xl md:text-4xl font-bold mb-4"
               >
-                ¿Por qué elegir <span className="text-primary">Alcars</span>?
+                ¿Por qué elegir <span className="text-primary">821 Cars</span>?
               </motion.h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 Nos destacamos por brindarte una experiencia de compra segura, transparente y adaptada a tus necesidades.
@@ -186,7 +189,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Dirección</h4>
-                      <p className="text-muted-foreground">Avenida Asamblea 6, Parque Chacabuco, Ciudad Autonoma Buenos Aires</p>
+                      <p className="text-muted-foreground">Araoz 821, Madero, Buenos Aires</p>
                     </div>
                   </div>
                   
@@ -220,87 +223,20 @@ export default function Home() {
                 className="relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl border border-border"
               >
                 {/* Embedded Google Maps */}
-                <iframe                 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.9104269232357!2d-58.4259777!3d-34.6317038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbad1e6c0001%3A0xe835b61706950b35!2sAv.%20Asamblea%206%2C%20C1424CON%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1779201701344!5m2!1ses!2sar" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen="" 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 grayscale-[0.2] contrast-125 hover:grayscale-0 transition-all duration-700"
-                ></iframe>
+
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.5909053057817!2d-58.508799225709176!3d-34.690273062072066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc92a56ae3e85%3A0xdf063c6a8e452228!2sAr%C3%A1oz%20821%2C%20B1768%20Villa%20Madero%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1789416370271!5m2!1ses!2sar" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="absolute inset-0 grayscale-[0.2] contrast-125 hover:grayscale-0 transition-all duration-700"
+                >
+                </iframe>
               </motion.div>
             </div>
-          </div>
-        </section>
-
-        {/* 🔹 Catálogo Section */}
-        <section ref={catalogRef} className="py-24 px-6 bg-secondary/20 min-h-screen">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center text-center space-y-6 mb-16">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl font-bold tracking-tight"
-              >
-                Nuestro Catálogo
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-muted-foreground text-lg max-w-2xl"
-              >
-                Buscá y encontrá el auto perfecto para vos.
-              </motion.p>
-              
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="relative w-full max-w-2xl"
-              >
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Buscar por marca, modelo, año..."
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  className="w-full bg-background border border-border rounded-full py-4 pl-12 pr-6 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all shadow-sm hover:shadow-md backdrop-blur-sm"
-                />
-              </motion.div>
-            </div>
-
-            {/* Resultados */}
-            {filteredStock.length > 0 ? (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-              >
-                {filteredStock.map((auto, index) => (
-                  <AutoCard key={auto.id} auto={auto} index={index} />
-                ))}
-              </motion.div>
-            ) : (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-20"
-              >
-                <div className="text-6xl mb-4">🔍</div>
-                <p className="text-muted-foreground text-xl">
-                  No se encontraron resultados para <span className="text-foreground font-semibold">&quot;{search}&quot;</span>.
-                </p>
-              </motion.div>
-            )}
           </div>
         </section>
 
@@ -334,7 +270,7 @@ export default function Home() {
         </div>
 
         <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} <span className="font-bold text-foreground">Alcars</span> • Todos los derechos reservados
+          © {new Date().getFullYear()} <span className="font-bold text-foreground">821 Cars</span> • Todos los derechos reservados
         </p>
       </footer>
 

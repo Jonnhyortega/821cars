@@ -1,23 +1,24 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
+import Logo821Cars from "@/components/Logo821Cars";
 
 export default function Navbar() {
   return (
-    <nav className="w-full max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+    <nav className="w-full max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
       {/* Logo */}
-      <Link href="/" className="relative group">
-         <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-         <img
-            src="https://res.cloudinary.com/do87isqjr/image/upload/v1760550481/logo-removebg-preview_m5ji7p.png"
-            alt="Logo Alcars"
-            className="relative z-10 w-16 md:w-20 drop-shadow-md hover:scale-105 transition-transform duration-300 bg-white rounded-full p-1"
-          />
+      <Link href="/" className="relative group flex items-center gap-3">
+         <Logo821Cars size="sm" showSubtitle={false} className="hover:scale-105 transition-transform duration-300" />
       </Link>
 
-      {/* Actions */}
-      <div className="flex items-center gap-4">
+      {/* Links de Navegación */}
+      <div className="flex items-center gap-6 font-semibold text-sm">
+        <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+          Inicio
+        </Link>
+        <Link href="/catalogo" className="px-4 py-2 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-500 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+          Catálogo
+        </Link>
         <ThemeToggle />
       </div>
     </nav>
