@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
     } else {
       // Mensaje genérico si no está en página de un auto
       const numero = "5491153144271";
-      const mensaje = "Hola! Mateo Estoy interesado en ir a ver los vehiculos.";
+      const mensaje = "Hola! Jonathan, estoy interesado en ir a ver los vehículos.";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
     }
