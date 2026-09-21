@@ -199,7 +199,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Teléfono / WhatsApp</h4>
-                      <a target="_blank" href={`https://wa.me/${1153144271}?text=${encodeURIComponent("Hola! Quisiera saber mas información sobre los vehiculos.")}`} className="text-muted-foreground">+54 9 11 5314-4271</a>
+                      <a target="_blank" href={`https://wa.me/5491153144271?text=${encodeURIComponent("Hola! Quisiera saber mas información sobre los vehiculos.")}`} className="text-muted-foreground">+54 9 11 5314-4271</a>
                     </div>
                   </div>
 
