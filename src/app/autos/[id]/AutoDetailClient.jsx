@@ -170,8 +170,8 @@ export default function AutoDetailClient({ auto }) {
               </div>
             </div>
 
-            {/* 👉 Lado Derecho: Imagen del Auto con Overlay Atenudador & Blur sutil */}
-            <div className="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[360px] lg:min-h-[480px] p-2 group/auto">
+            {/* 👉 Lado Derecho: Imagen del Auto (Oculta en móviles, visible en escritorio lg:) */}
+            <div className="hidden lg:flex lg:col-span-6 relative flex-col items-center justify-center min-h-[360px] lg:min-h-[480px] p-2 group/auto">
               
               {/* Overlay atenudador para hacer resaltar los textos de la izquierda */}
               <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent dark:from-[#111622]/95 dark:via-[#111622]/50 dark:to-transparent z-10 pointer-events-none transition-opacity duration-500" />
