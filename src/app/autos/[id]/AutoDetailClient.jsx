@@ -76,12 +76,12 @@ export default function AutoDetailClient({ auto }) {
                 </div>
 
                 {/* Modelo y Versión */}
-                <div className="flex flex-wrap items-baseline gap-3">
-                  <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+                <div className="flex flex-wrap items-baseline gap-2 sm:gap-3">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
                     {auto.model}
                   </h1>
                   {auto.version && (
-                    <span className="text-2xl md:text-3xl font-light text-slate-400 dark:text-neutral-400">
+                    <span className="text-xl sm:text-2xl md:text-3xl font-light text-slate-400 dark:text-neutral-400">
                       {auto.version}
                     </span>
                   )}
@@ -118,10 +118,10 @@ export default function AutoDetailClient({ auto }) {
               </div>
 
               {/* 3 Bloques Rectangulares Blancos / Estilizados */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
                 
                 {/* Caja PRECIO */}
-                <div className="sm:col-span-1 p-4 rounded-2xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 shadow-sm flex flex-col justify-center">
+                <div className="col-span-2 sm:col-span-1 p-4 rounded-2xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 shadow-sm flex flex-col justify-center">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-neutral-400 mb-0.5">
                     PRECIO ESPECIAL
                   </span>
@@ -138,7 +138,7 @@ export default function AutoDetailClient({ auto }) {
                 </div>
 
                 {/* Caja KM */}
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center text-center">
+                <div className="col-span-1 p-4 rounded-2xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center text-center">
                   <Gauge className="w-6 h-6 text-slate-400 dark:text-neutral-400 mb-1" />
                   <span className="text-sm font-extrabold text-slate-900 dark:text-white">
                     {auto.km} km
@@ -146,7 +146,7 @@ export default function AutoDetailClient({ auto }) {
                 </div>
 
                 {/* Caja ESTADO */}
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center text-center">
+                <div className="col-span-1 p-4 rounded-2xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center text-center">
                   <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-neutral-800 flex items-center justify-center mb-1">
                     <Check className="w-4 h-4 text-slate-700 dark:text-neutral-300" />
                   </div>
