@@ -199,7 +199,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Teléfono / WhatsApp</h4>
-                      <a target="_blank" href={`https://wa.me/${1150109592}?text=${encodeURIComponent("Hola! Quisiera saber mas información sobre los vehiculos.")}`} className="text-muted-foreground">+54 9 11 5010-9592</a>
+                      <a target="_blank" href={`https://wa.me/${1153144271}?text=${encodeURIComponent("Hola! Quisiera saber mas información sobre los vehiculos.")}`} className="text-muted-foreground">+54 9 11 5314-4271</a>
                     </div>
                   </div>
 
@@ -248,7 +248,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
           {/* 🔗 WhatsApp */}
           <a
-            href="https://wa.me/5491150109592?text=Hola!%20Estoy%20interesado%20en%20consultar%20por%20un%20veh%C3%ADculo."
+            href="https://wa.me/5491153144271?text=Hola!%20Estoy%20interesado%20en%20consultar%20por%20un%20veh%C3%ADculo."
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary hover:bg-green-500/10 hover:text-green-600 transition-all duration-300 group"

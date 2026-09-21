@@ -1,5 +1,5 @@
 export const enviarWhatsApp = (auto) => {
-    const numero = "1150109592"; 
+    const numero = "1153144271"; 
     const mensaje = `Hola! Estoy interesado en el ${auto.marca} ${auto.model} ${auto.año}. 
   Me gustaria recibir la cotizacion`;
   

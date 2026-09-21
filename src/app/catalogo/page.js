@@ -116,7 +116,7 @@ export default function CatalogoPage() {
       <footer className="text-center py-10 border-t border-border bg-card/30 backdrop-blur-md">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
           <a
-            href="https://wa.me/5491150109592?text=Hola!%20Estoy%20interesado%20en%20consultar%20por%20un%20veh%C3%ADculo."
+            href="https://wa.me/5491153144271?text=Hola!%20Estoy%20interesado%20en%20consultar%20por%20un%20veh%C3%ADculo."
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary hover:bg-green-500/10 hover:text-green-600 transition-all duration-300 group"
