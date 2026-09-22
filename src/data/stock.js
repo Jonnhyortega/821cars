@@ -23,6 +23,7 @@ export const stock = [
         precio: 11100,
         moneda: "usd",
         disponible: true,
+        reservado: true,
         make_logo: logos.ford,
         miniatura: "https://res.cloudinary.com/do87isqjr/image/upload/v1789395894/WhatsApp_Image_2026-09-08_at_14.06.06-removebg-preview_fcgh7a.png",
         imgs: [
