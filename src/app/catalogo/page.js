@@ -126,7 +126,7 @@ export default function CatalogoPage() {
           </a>
 
           <a
-            href="https://www.instagram.com/alcars.chacabuco/"
+            href="https://www.instagram.com/821cars_madero/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary hover:bg-pink-500/10 hover:text-pink-600 transition-all duration-300 group"
