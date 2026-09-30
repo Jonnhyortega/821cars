@@ -28,17 +28,10 @@ export default function Logo821Cars({ size = "md", showSubtitle = false, classNa
           <div className={`relative rounded-full overflow-hidden border-2 border-white/20 shadow-2xl bg-black ${logoSizes[size]}`}>
             <img
               src={logoUrl}
-              alt="821 Cars Logo"
+              alt="Logo"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
           </div>
-        </div>
-
-        {/* Tipografía 821 CARS */}
-        <div className="flex items-center gap-2 font-black tracking-tighter">
-          <span className={`font-black tracking-wider uppercase bg-gradient-to-r from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent ${textSize[size]}`}>
-            821 <span className="text-blue-500">CARS</span>
-          </span>
         </div>
       </div>
 

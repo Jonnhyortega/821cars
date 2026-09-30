@@ -72,7 +72,6 @@ export default function AutoCard({ auto, index = 0 }) {
             />
           ) : (
             <div className="flex flex-col items-center justify-center h-full text-white/80 text-center z-10">
-              <span className="text-3xl font-black italic text-blue-400 tracking-wider mb-1">821</span>
               <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Fotos Próximamente</span>
             </div>
           )}

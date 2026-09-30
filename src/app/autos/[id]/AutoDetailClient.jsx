@@ -132,9 +132,7 @@ export default function AutoDetailClient({ auto }) {
                         : `$${auto.precio.toLocaleString("es-AR")}`
                       : "Consultar"}
                   </span>
-                  <span className="text-xs font-medium text-slate-400 dark:text-neutral-500 mt-0.5">
-                    821 Cars
-                  </span>
+
                 </div>
 
                 {/* Caja KM */}
@@ -206,7 +204,6 @@ export default function AutoDetailClient({ auto }) {
                 </div>
               ) : (
                 <div className="flex flex-col items-center justify-center text-center p-8 bg-slate-100 dark:bg-neutral-900 rounded-3xl w-full border border-gray-200 dark:border-neutral-800">
-                  <span className="text-4xl font-black italic text-blue-500 mb-2">821</span>
                   <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Fotos Próximamente</span>
                 </div>
               )}
@@ -224,7 +221,7 @@ export default function AutoDetailClient({ auto }) {
 
         {/* Footer */}
         <footer className="text-center text-muted-foreground text-sm pt-8 pb-4">
-          © {new Date().getFullYear()} <span className="font-semibold text-foreground">821 Cars</span> – Automotors
+          © {new Date().getFullYear()} – Automotors
         </footer>
       </div>
     </section>

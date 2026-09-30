@@ -8,19 +8,19 @@ export async function generateMetadata({ params }) {
 
   if (!auto) {
     return {
-      title: "Vehículo no encontrado | 821 Cars",
-      description: "El vehículo consultado no se encuentra disponible en 821 Cars.",
+      title: "Vehículo no encontrado",
+      description: "El vehículo consultado no se encuentra disponible.",
     };
   }
 
-  const title = `${auto.marca} ${auto.model} ${auto.version ? auto.version + " " : ""}(${auto.año}) - 821 Cars`;
+  const title = `${auto.marca} ${auto.model} ${auto.version ? auto.version + " " : ""}(${auto.año})`;
   const precioFormateado = auto.precio > 0 
     ? auto.moneda === "usd" 
       ? `USD $ ${auto.precio.toLocaleString("es-AR")}` 
       : `$ ${auto.precio.toLocaleString("es-AR")}`
     : "Consultar";
 
-  const description = `${auto.marca} ${auto.model} ${auto.año} - ${auto.km} KM. Motor ${auto.motor || "Nafta"}. Precio: ${precioFormateado}. ¡Consultá ahora en 821 Cars!`;
+  const description = `${auto.marca} ${auto.model} ${auto.año} - ${auto.km} KM. Motor ${auto.motor || "Nafta"}. Precio: ${precioFormateado}. ¡Consultá ahora!`;
   
   // Usar miniatura recortada o la primera foto de la galería o el logo oficial
   const imagePreview = auto.miniatura || (auto.imgs && auto.imgs[0]) || "https://res.cloudinary.com/do87isqjr/image/upload/v1789487738/Gemini_Generated_Image_29rjyv29rjyv29rj_cg2onb.jpg";
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
-      siteName: "821 Cars Automotors",
+      siteName: "Automotors",
       images: [
         {
           url: imagePreview,

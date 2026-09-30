@@ -77,9 +77,9 @@ export default function Home() {
             className="mb-8 relative"
           >
             <div className="absolute inset-0 bg-blue-500/20 blur-[90px] rounded-full"></div>
-            <div className="relative z-10 p-6 bg-card/60 backdrop-blur-xl border border-border/80 rounded-3xl shadow-2xl">
+            {/* <div className="relative z-10 p-6 bg-card/60 backdrop-blur-xl border border-border/80 rounded-3xl shadow-2xl">
               <Logo821Cars size="xl" showSubtitle={true} />
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.h1 
@@ -97,7 +97,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10"
           >
-            En <span className="font-semibold text-foreground">821 Cars</span> te ofrecemos la mejor selección de autos, con la confianza y el respaldo que necesitás para tomar la mejor decisión.
+            Te ofrecemos la mejor selección de autos, con la confianza y el respaldo que necesitás para tomar la mejor decisión.
           </motion.p>
 
           <motion.div
@@ -135,7 +135,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="text-3xl md:text-4xl font-bold mb-4"
               >
-                ¿Por qué elegir <span className="text-primary">821 Cars</span>?
+                ¿Por qué <span className="text-primary">elegirnos</span>?
               </motion.h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 Nos destacamos por brindarte una experiencia de compra segura, transparente y adaptada a tus necesidades.
@@ -256,21 +256,10 @@ export default function Home() {
             <Image width={24} height={24} src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp" className="group-hover:scale-110 transition-transform"/>
             <span className="font-medium">WhatsApp</span>
           </a>
-
-          {/* 🔗 Instagram */}
-          <a
-            href="https://www.instagram.com/821cars_madero/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary hover:bg-pink-500/10 hover:text-pink-600 transition-all duration-300 group"
-          >
-            <Image width={24} height={24} src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram" className="group-hover:scale-110 transition-transform"/>
-            <span className="font-medium">Instagram</span>
-          </a>
         </div>
 
         <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} <span className="font-bold text-foreground">821 Cars</span> • Todos los derechos reservados
+          © {new Date().getFullYear()} • Todos los derechos reservados
         </p>
       </footer>
 

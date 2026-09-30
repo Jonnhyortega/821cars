@@ -44,7 +44,7 @@ export default function CatalogoPage() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest"
             >
-              <Car className="w-4 h-4" /> Stock Actualizado 821 Cars
+              <Car className="w-4 h-4" /> Stock Actualizado
             </motion.div>
 
             <motion.h1
@@ -124,20 +124,10 @@ export default function CatalogoPage() {
             <Image width={24} height={24} src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp" className="group-hover:scale-110 transition-transform"/>
             <span className="font-medium">WhatsApp</span>
           </a>
-
-          <a
-            href="https://www.instagram.com/821cars_madero/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary hover:bg-pink-500/10 hover:text-pink-600 transition-all duration-300 group"
-          >
-            <Image width={24} height={24} src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram" className="group-hover:scale-110 transition-transform"/>
-            <span className="font-medium">Instagram</span>
-          </a>
         </div>
 
         <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} <span className="font-bold text-foreground">821 Cars</span> • Todos los derechos reservados
+          © {new Date().getFullYear()} • Todos los derechos reservados
         </p>
       </footer>
     </div>

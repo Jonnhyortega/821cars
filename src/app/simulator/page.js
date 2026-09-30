@@ -141,7 +141,7 @@ export default function SimulatorPage() {
     const textoPrecioARS = `$ ${resultado.precioARS.toLocaleString("es-AR")}`;
     const textoAnticipo = `$ ${resultado.anticipoARS.toLocaleString("es-AR")}`;
 
-    let texto = `🚘 *PROPUESTA DE FINANCIACIÓN - 821 CARS*\n\n` +
+    let texto = `🚘 *PROPUESTA DE FINANCIACIÓN*\n\n` +
       `• *Precio Vehículo:* ${textoPrecioOriginal}`;
 
     if (resultado.monedaPrecio === "USD") {
@@ -181,7 +181,7 @@ export default function SimulatorPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest"
             >
-              <Calculator className="w-4 h-4" /> Herramienta Comercial 821 Cars
+              <Calculator className="w-4 h-4" /> Herramienta Comercial
             </motion.div>
 
             <h1 className="text-3xl md:text-5xl font-black tracking-tight">
@@ -319,7 +319,7 @@ export default function SimulatorPage() {
                     <h2 className="text-xl font-extrabold tracking-tight">
                       Propuesta de Financiación
                     </h2>
-                    <p className="text-xs text-muted-foreground">821 Cars • {resultado.fecha}</p>
+                    <p className="text-xs text-muted-foreground">{resultado.fecha}</p>
                   </div>
                 </div>
 
